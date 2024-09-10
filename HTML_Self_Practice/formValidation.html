@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+
+    <script type="text/javascript">
+        function validation(){
+            let uname=document.registration.username;
+            let pws=document.registration.password;
+             alert(uname.value);
+            console.log(uname.value);
+
+            if(uname_validation(uname)){
+                if(pws_validation(pws,5,12)){
+
+                }
+            }
+            return false;
+        }
+
+        function uname_validation(uname)
+        {
+            var letters=/^[A-Za-z]+$/;
+            console.log(pws.value);
+            if(uname.value.match(letters)){
+                return true;
+            }
+            else
+            {
+                alert('Username must have alphabet characters only');
+                uname.focus();
+                return false;
+            }
+        }
+
+        function pws_validation(pws,min,max)
+        {
+            var pws_len=pws.value.length;
+            if(pws_len==0 || pws_len < min || pws_len > max)
+            {
+                alert("User password should not be empty/length must be between"  +min+  "to"  +max);
+                pws_len.focus();
+                return false;
+            }  
+            return true;             
+        }
+    </script>
+</head>
+<body style="background-color: rgb(242, 242, 242); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+<div id="div1"> 
+    <div id="div2" style="height: 30px; width: 450px; margin-left:30px; margin-top: 80px;">
+        <div style="margin-top: 220px;"> <h1 style="color:#0866FF;margin-top: 0px;margin-left: 175px;font-size: 75px; height: 50px;">facebook</h1>
+            <p style="font-size: 27px; margin-left: 175px; height: 26px; width: 580px;">Facebook helps you connect and share with the people in your life.</p>
+        </div>              
+    </div>
+        <div id="div3" style="background-color: white;height: 376px; width: 420px;border-radius: 10px; box-shadow: 1px 1px 2px 2px rgb(225, 225, 225);margin-left: 860px;margin-top: -100px;" ><br>  
+            <div id="div4" style="margin-top: 5px;">
+                <form onsubmit="return validation();" name="registration">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" name="username" id="uname" size="12" required placeholder="Email adsress or Phone Number" style="font-size:15px; width: 330px; height: 45px; margin-left: 20px; margin-right: 35px;padding-right: 25px;padding-left: 20px;background-color: #ffffff;border-radius: 7px;border: 1px solid rgb(203, 203, 203);">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" name="password" id="pws" size="12" required placeholder="Password" style="font-size:15px;width: 330px;height: 45px;margin-left: 20px;margin-right: 35px;padding-right: 25px;padding-left: 20px;margin-top: 10px;border-radius: 7px;border: 1px solid rgb(203, 203, 203);">
+                            </td>
+                        </tr>
+                        <center>
+                        <tr>
+                            <td>
+                                
+                                    <input type="submit" name="submit" value="Log in" style="font-size: 25px; font-family:Arial, Helvetica, sans-serif; background-color: #1877F2; color: white; width: 380px; margin-top: 15px; height: 45px; border-radius: 8px; border: 1px solid rgb(203, 203, 203);margin-left: 18px;">
+    
+                            </td>
+                        </tr> 
+                    </center>
+                    </table>
+                </form>
+                    <center><p style="font-size: 15px; color: #5479F2;">Forgotten Password?</p>
+                        <p style="border-bottom: 1px solid rgb(208, 208, 208);"></p></center>
+                        <p style="height: 2px;"></p>
+                        <p style="color: white; padding: 15px; background-color: rgb(110, 183, 0);margin-left: 110px;margin-right: 110px;font-size: 15px;border-radius: 5px;"><b>Create new account</b></p>
+            </div>         
+    </div>
+</div>
+
+<p style="font-size: 15px; margin-left: 905px;margin-right: 100px;margin-top: 20px;"><b>create a page </b> for a celebrity, brand or business.</p>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+
+    <script type="text/javascript">
+        function validation()
+        {
+            let uname=document.registration.username;
+            let pws=document.registration.password;
+            alert(uname.value);
+            console.log(uname.value);
+
+            if(uname_validation(uname)){
+                if(pws_validation(pws,5,12)){
+
+                }
+            }
+            return false;
+        }
+
+        function uname_validation(uname)
+        {
+            var letters=/^[A-Za-z]+$/;
+            console.log(pws.value);
+            if(uname.value.match(letters)){
+                return true;
+            }
+            else
+            {
+                alert('Username must have alphabet characters only');
+                uname.focus();
+                return false;
+            }
+        }
+
+        function pws_validation(pws,min,max)
+        {
+            var pws_len=pws.value.length;
+            if(pws_len==0 || pws_len < min || pws_len > max)
+            {
+                alert("User password should not be empty/length must be between"  +min+  "to"  +max);
+                pws_len.focus();
+                return false;
+            }  
+            return true;             
+        }
+    </script>
+</head>
+<body style="background-color: rgb(247, 247, 247); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+<div id="div1"> 
+        
+    <center> 
+        <h1 style="color: #0866FF;font-size: 55px; height: 35px;margin-top: 80px;">facebook</h1>
+    </center>
+    
+    <center> 
+        <div id="div2" style="background-color: white;height: 396px; width: 406px;border-radius: 10px; box-shadow: 1px 2px 2px 1px rgb(225, 225, 225);">
+            <form onsubmit="return validation();" name="registration">
+                <p style="height: 2px;"></p> 
+                <p style="height: 5px;font-size: 21px;color: rgb(35, 35, 35);">Log in to Facebook</p><br>    
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="username" id="uname" size="12" required placeholder="Email adsress or Phone Number" style="font-size:15px; width: 260px; height: 50px; margin-left: 35px; margin-right: 35px;padding-right: 25px;padding-left: 20px;border-radius:solid rgb(219, 217, 217);">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" name="password" id="pws" size="12" required placeholder="Password" style="font-size:15px;width: 260px;height: 50px;margin-left: 35px;margin-right: 35px;padding-right: 25px;padding-left: 20px;margin-top: 10px;border-radius:solid rgb(230, 230, 230);">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>                                
+                                <input type="submit" name="submit" value="Log in" style="font-size: 25px; font-family:Arial, Helvetica, sans-serif; background-color: #166FE5; color: white;width: 310px;  padding-left: 20px;padding-right: 25px;margin-top: 10px; height: 38px;">
+                                
+                            </center>
+                        </td>
+                    </tr> 
+                       
+                </table>
+            </form>
+                <center>
+                <p style="font-size: 15px; color: #5479F2;">Forgotten Password?</p>
+                <p style="border-bottom: 1px solid rgb(208, 208, 208);"></p>
+                </center>
+    
+                <center> 
+                    <p style="color: white; background-color: #36A420;font-size: 20px;border-radius: 5px;padding-top: 12px;padding-bottom: 12px;margin-left: 100px;margin-right: 100px;">Create new account</p> 
+                </center>
+                <p style="font-size: 15px; font-family:Arial, Helvetica, sans-serif;margin-top: 60px;">create a page for a celebrity,brand or business.</p>
+        </div> 
+    </center>
+</div>
+ </center>
+</body>
+</html>

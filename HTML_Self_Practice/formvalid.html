@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        function validation(){
+            let uname=document.registration.username;
+            let pws=document.registration.password;
+            alert(pws.value);
+            console.log(pws.value);
+
+            if(uname_validation(uname)){
+                if(pws_validation(pws,5,12)){
+
+                }
+            }
+            return false;
+        }
+
+        function uname_validation(uname)
+        {
+            var letters=/^[A-Za-z]+$/;
+            console.log(pws.value);
+            if(uname.value.match(letters)){
+                return true;
+            }
+            else
+            {
+                alert('Username must have alphabet characters only');
+                uname.focus();
+                return false;
+            }
+        }
+
+        function pws_validation(pws,min,max)
+        {
+            var pws_len=pws.value.length;
+            if(pws_len==0 || pws_len < min || pws_len > max)
+            {
+                alert("User password should not be empty/length must be between" +min+ "to" +max);
+                pws_len.focus();
+                return false;
+            }  
+            return true;             
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validation();" name="registration">
+        <h1>login form</h1>
+        <label for="username">username</label><br>
+        <input type="text" id="uname" name="username" size="12"><br>
+        <label for="">password</label><br>
+        <input type="password" name="password" id="pws" size="12"><br>
+
+        <input type="submit" name="submit" id="" value="Login">
+    
+    
+    
+    </form>
+</body>
+</html>
