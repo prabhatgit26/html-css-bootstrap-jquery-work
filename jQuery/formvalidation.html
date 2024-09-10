@@ -1,0 +1,68 @@
+<! DOCTYPE html>  
+<html>  
+    <head>  
+    <title>JQuery validation example 1</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <head>  
+        <style></style>  
+    </head>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script>  
+    
+    <script>  
+        $(document).ready (function () 
+        {  
+            $("#basic-form").validate ();  
+        });  
+    </script>
+
+<body> 
+    
+    <center> <h2 style="margin-top: 100px; font-size: 50px;">jQuery Form Validation</h2> </center>
+    <center>    
+        <form id = "basic-form" action="" method="post">  
+            <table>
+                <tr>
+                    <td>
+                        <p>  
+                            <label for= "name"> First Name <span> (required, at least 8 characters) </span> </label> <br> 
+                            <input id="name" name="name" minlength="8" type="text" required>  
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>  
+                            <label for = "name"> Last Name <span> </span> </label> <br> 
+                            <input type = "text" id="name" name="name" minlength="8" required>  
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 
+                        <p>  
+                            <label for="email"> E-Mail <span> (required) </span> </label> <br> 
+                            <input id="email" type="email" name="email" required>  
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>  
+                            <label for="password"> Password </label> <br> 
+                            <input type="password" name="password" id="password" required > <br><br> 
+                        </p>  
+                    </td>
+                </tr>
+                <tr>    
+                    <td>
+                        <p>  
+                            <input class="submit" type="submit" value="SUBMIT">  
+                        </p> 
+                    </td>
+                </tr> 
+            </table>
+        </form>
+    </center>      
+</body>  
+</html>
